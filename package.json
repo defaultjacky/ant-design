@@ -183,7 +183,7 @@
     "@octokit/rest": "^21.0.2",
     "@prettier/sync": "^0.5.4",
     "@qixian.cs/github-contributors-list": "^2.0.2",
-    "@rc-component/father-plugin": "^2.1.0",
+    "@rc-component/father-plugin": "^2.1.1",
     "@size-limit/file": "^11.1.6",
     "@stackblitz/sdk": "^1.11.0",
     "@testing-library/dom": "^10.4.0",

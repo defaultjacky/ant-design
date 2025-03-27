@@ -5,10 +5,10 @@ import type { FontMapToken } from './font';
 import type { HeightMapToken, SizeMapToken } from './size';
 import type { StyleMapToken } from './style';
 
-export * from './colors';
-export * from './font';
-export * from './size';
-export * from './style';
+export type * from './colors';
+export type * from './font';
+export type * from './size';
+export type * from './style';
 
 export interface CommonMapToken extends StyleMapToken {
   // Motion
