@@ -5,4 +5,7 @@ export default defineConfig({
   esm: {
     input: 'components/',
   },
+  cjs: {
+    input: 'components/',
+  },
 });
