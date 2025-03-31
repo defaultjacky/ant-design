@@ -1,3 +1,5 @@
+import React from 'react';
+
 import type { ScreenMap } from '../../_util/responsiveObserver';
 import { responsiveArray } from '../../_util/responsiveObserver';
 import type { RowProps } from '../row';
