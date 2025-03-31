@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks-extra/no-unnecessary-use-prefix */
 import util from 'util';
 import React from 'react';
 import type { DOMWindow } from 'jsdom';

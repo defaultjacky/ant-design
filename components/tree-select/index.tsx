@@ -23,10 +23,10 @@ import useSize from '../config-provider/hooks/useSize';
 import type { SizeType } from '../config-provider/SizeContext';
 import { FormItemInputContext } from '../form/context';
 import useVariant from '../form/hooks/useVariants';
+import computeShowArrow from '../select/computeShowArrow';
 import mergedBuiltinPlacements from '../select/mergedBuiltinPlacements';
 import useSelectStyle from '../select/style';
 import useIcons from '../select/useIcons';
-import useShowArrow from '../select/useShowArrow';
 import { useCompactItemContext } from '../space/Compact';
 import { useToken } from '../theme/internal';
 import type { AntTreeNodeProps, TreeProps } from '../tree';
@@ -201,7 +201,7 @@ const InternalTreeSelect = <ValueType = any, OptionType extends DataNode = DataN
     return maxCount;
   }, [maxCount, showCheckedStrategy, treeCheckStrictly]);
 
-  const showSuffixIcon = useShowArrow(props.suffixIcon, props.showArrow);
+  const showSuffixIcon = computeShowArrow(props.suffixIcon, props.showArrow);
 
   const mergedPopupMatchSelectWidth =
     popupMatchSelectWidth ?? dropdownMatchSelectWidth ?? contextPopupMatchSelectWidth;

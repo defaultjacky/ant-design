@@ -11,7 +11,7 @@ jest.mock('../../_util/responsiveObserver', () => {
   const modules = jest.requireActual('../../_util/responsiveObserver');
   const originHook = modules.default;
 
-  const useMockResponsiveObserver = (...args: any[]) => {
+  const mockResponsiveObserver = (...args: any[]) => {
     const entity = originHook(...args);
     if (!entity.unsubscribe.mocked) {
       const originUnsubscribe = entity.unsubscribe;
@@ -30,7 +30,7 @@ jest.mock('../../_util/responsiveObserver', () => {
   return {
     ...modules,
     __esModule: true,
-    default: useMockResponsiveObserver,
+    default: mockResponsiveObserver,
   };
 });
 

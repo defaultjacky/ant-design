@@ -79,11 +79,7 @@ const genBaseStyle: GenerateStyle<TreeSelectToken> = (token) => {
 export const prepareComponentToken: GetDefaultToken<'TreeSelect'> = initComponentToken;
 
 // ============================== Export ==============================
-export default function useTreeSelectStyle(
-  prefixCls: string,
-  treePrefixCls: string,
-  rootCls: string,
-) {
+export default (prefixCls: string, treePrefixCls: string, rootCls: string) => {
   return genStyleHooks(
     'TreeSelect',
     (token) => {
@@ -92,4 +88,4 @@ export default function useTreeSelectStyle(
     },
     initComponentToken,
   )(prefixCls, rootCls);
-}
+};

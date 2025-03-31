@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks-extra/no-unnecessary-use-prefix */
 import url from 'node:url';
 import path from 'path';
 import React from 'react';
