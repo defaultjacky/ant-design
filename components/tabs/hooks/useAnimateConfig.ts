@@ -1,3 +1,4 @@
+import React from 'react';
 import type { CSSMotionProps } from 'rc-motion';
 import type { AnimatedConfig } from 'rc-tabs/lib/interface';
 
