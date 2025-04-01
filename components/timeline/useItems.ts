@@ -3,7 +3,7 @@ import toArray from 'rc-util/lib/Children/toArray';
 
 import type { TimelineItemProps } from './TimelineItem';
 
-const useItems = (items?: TimelineItemProps[], children?: React.ReactNode): TimelineItemProps[] => {
+function useItems(items?: TimelineItemProps[], children?: React.ReactNode): TimelineItemProps[] {
   return React.useMemo(
     () =>
       Array.isArray(items)
@@ -14,6 +14,6 @@ const useItems = (items?: TimelineItemProps[], children?: React.ReactNode): Time
           })),
     [items, children],
   );
-};
+}
 
 export default useItems;

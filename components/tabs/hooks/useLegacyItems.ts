@@ -5,7 +5,7 @@ import toArray from 'rc-util/lib/Children/toArray';
 import type { TabPaneProps, TabsProps } from '..';
 import { devUseWarning } from '../../_util/warning';
 
-const useLegacyItems = (items?: TabsProps['items'], children?: React.ReactNode) => {
+export default function useLegacyItems(items?: TabsProps['items'], children?: React.ReactNode) {
   if (process.env.NODE_ENV !== 'production') {
     const warning = devUseWarning('Tabs');
     warning.deprecated(!children, 'Tabs.TabPane', 'items');
@@ -25,6 +25,4 @@ const useLegacyItems = (items?: TabsProps['items'], children?: React.ReactNode) 
     });
     return childrenItems.filter(Boolean) as Tab[];
   }, [items, children]);
-};
-
-export default useLegacyItems;
+}

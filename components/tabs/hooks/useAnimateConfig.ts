@@ -11,12 +11,10 @@ const motion: CSSMotionProps = {
   motionLeave: true,
 };
 
-const defaultAnimated: TabsProps['animated'] = {
-  inkBar: true,
-  tabPane: false,
-};
-
-const useAnimateConfig = (prefixCls: string, animated: TabsProps['animated'] = defaultAnimated) => {
+export default function useAnimateConfig(
+  prefixCls: string,
+  animated: TabsProps['animated'] = { inkBar: true, tabPane: false },
+) {
   return React.useMemo<AnimatedConfig>(() => {
     let mergedAnimated: AnimatedConfig;
     if (animated === false) {
@@ -43,6 +41,4 @@ const useAnimateConfig = (prefixCls: string, animated: TabsProps['animated'] = d
     }
     return mergedAnimated;
   }, [prefixCls, animated]);
-};
-
-export default useAnimateConfig;
+}
