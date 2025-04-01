@@ -1,6 +1,6 @@
 import type { TableProps } from 'rc-table';
 
-const createContainerWidthResolver = (prefixCls: string) => {
+export default function createContainerWidthResolver(prefixCls: string) {
   const getContainerWidth: TableProps['getContainerWidth'] = (ele, width) => {
     const container = ele.querySelector<HTMLElement>(`.${prefixCls}-container`);
     let returnWidth = width;
@@ -13,6 +13,4 @@ const createContainerWidthResolver = (prefixCls: string) => {
     return returnWidth;
   };
   return getContainerWidth;
-};
-
-export default createContainerWidthResolver;
+}
