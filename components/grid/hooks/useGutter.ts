@@ -6,7 +6,7 @@ import type { RowProps } from '../row';
 
 type Gap = number | undefined;
 
-const useGutter = (gutter: RowProps['gutter'], screens: ScreenMap | null) => {
+export default function useGutter(gutter: RowProps['gutter'], screens: ScreenMap | null) {
   return React.useMemo<[Gap, Gap]>(() => {
     const results: [number | undefined, number | undefined] = [undefined, undefined];
     const normalizedGutter = Array.isArray(gutter) ? gutter : [gutter, undefined];
@@ -34,6 +34,4 @@ const useGutter = (gutter: RowProps['gutter'], screens: ScreenMap | null) => {
     });
     return results;
   }, [gutter, screens]);
-};
-
-export default useGutter;
+}
