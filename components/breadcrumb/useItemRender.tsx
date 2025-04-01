@@ -59,18 +59,13 @@ export function renderItem(
   );
 }
 
-const useItemRender = (prefixCls: string, itemRender?: ItemRender) => {
-  const mergedItemRender = React.useCallback<InternalItemRenderParams>(
-    (item, params, routes, path, href) => {
-      if (itemRender) {
-        return itemRender(item, params, routes, path);
-      }
-      const name = getBreadcrumbName(item, params);
-      return renderItem(prefixCls, item, name, href);
-    },
-    [prefixCls, itemRender],
-  );
+export default function convertItemRender(prefixCls: string, itemRender?: ItemRender) {
+  const mergedItemRender: InternalItemRenderParams = (item, params, routes, path, href) => {
+    if (itemRender) {
+      return itemRender(item, params, routes, path);
+    }
+    const name = getBreadcrumbName(item, params);
+    return renderItem(prefixCls, item, name, href);
+  };
   return mergedItemRender;
-};
-
-export default useItemRender;
+}

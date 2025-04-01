@@ -28,10 +28,10 @@ import useSize from '../config-provider/hooks/useSize';
 import type { SizeType } from '../config-provider/SizeContext';
 import { FormItemInputContext } from '../form/context';
 import useVariant from '../form/hooks/useVariants';
-import computeShowArrow from '../select/computeShowArrow';
 import mergedBuiltinPlacements from '../select/mergedBuiltinPlacements';
 import useSelectStyle from '../select/style';
 import useIcons from '../select/useIcons';
+import useShowArrow from '../select/useShowArrow';
 import { useCompactItemContext } from '../space/Compact';
 import useBase from './hooks/useBase';
 import useCheckable from './hooks/useCheckable';
@@ -282,7 +282,7 @@ const Cascader = React.forwardRef<CascaderRef, CascaderProps<any>>((props, ref) 
   const checkable = useCheckable(cascaderPrefixCls, multiple);
 
   // ===================== Icons =====================
-  const showSuffixIcon = computeShowArrow(props.suffixIcon, showArrow);
+  const showSuffixIcon = useShowArrow(props.suffixIcon, showArrow);
 
   const { suffixIcon, removeIcon, clearIcon } = useIcons({
     ...props,

@@ -15,7 +15,7 @@ import { FormContext, NoStyleItemContext } from '../context';
 import type { FormInstance, FormItemLayout } from '../Form';
 import type { FormItemInputProps } from '../FormItemInput';
 import type { FormItemLabelProps, LabelTooltipType } from '../FormItemLabel';
-import useChildren from '../hooks/useChildren';
+import convertChildren from '../hooks/convertChildren';
 import useFormItemStatus from '../hooks/useFormItemStatus';
 import useFrameState from '../hooks/useFrameState';
 import useItemRef from '../hooks/useItemRef';
@@ -139,7 +139,7 @@ function InternalFormItem<Values = any>(props: FormItemProps<Values>): React.Rea
   const { getPrefixCls } = React.useContext(ConfigContext);
   const { name: formName } = React.useContext(FormContext);
 
-  const mergedChildren = useChildren(children);
+  const mergedChildren = convertChildren(children);
 
   const isRenderProps = typeof mergedChildren === 'function';
   const notifyParentMetaChange = React.useContext(NoStyleItemContext);

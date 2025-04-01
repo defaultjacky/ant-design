@@ -23,7 +23,7 @@ import type { SpinProps } from '../spin';
 import Spin from '../spin';
 import { useToken } from '../theme/internal';
 import renderExpandIcon from './ExpandIcon';
-import useContainerWidth from './hooks/useContainerWidth';
+import createContainerWidthResolver from './hooks/createContainerWidthResolver';
 import type { FilterConfig, FilterState } from './hooks/useFilter';
 import useFilter, { getFilterData } from './hooks/useFilter';
 import useLazyKVMap from './hooks/useLazyKVMap';
@@ -226,7 +226,7 @@ const InternalTable = <RecordType extends AnyObject = AnyObject>(
   } as NonNullable<RcTableProps['internalRefs']>;
 
   // ============================ Width =============================
-  const getContainerWidth = useContainerWidth(prefixCls);
+  const getContainerWidth = createContainerWidthResolver(prefixCls);
 
   // ============================= Refs =============================
   const rootRef = React.useRef<HTMLDivElement>(null);

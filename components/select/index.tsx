@@ -26,10 +26,10 @@ import { FormItemInputContext } from '../form/context';
 import useVariants from '../form/hooks/useVariants';
 import { useCompactItemContext } from '../space/Compact';
 import { useToken } from '../theme/internal';
-import computeShowArrow from './computeShowArrow';
 import mergedBuiltinPlacements from './mergedBuiltinPlacements';
 import useStyle from './style';
 import useIcons from './useIcons';
+import useShowArrow from './useShowArrow';
 
 type RawValue = string | number;
 
@@ -167,7 +167,7 @@ const InternalSelect = <
 
   const isMultiple = mode === 'multiple' || mode === 'tags';
 
-  const showSuffixIcon = computeShowArrow(props.suffixIcon, props.showArrow);
+  const showSuffixIcon = useShowArrow(props.suffixIcon, props.showArrow);
 
   const mergedPopupMatchSelectWidth =
     popupMatchSelectWidth ?? dropdownMatchSelectWidth ?? contextPopupMatchSelectWidth;

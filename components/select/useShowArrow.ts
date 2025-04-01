@@ -6,6 +6,9 @@ import type { ReactNode } from 'react';
  *
  * If `suffixIcon` is not equal to `null`, always show it.
  */
-export default function computeShowArrow(suffixIcon?: ReactNode, showArrow?: boolean) {
-  return showArrow !== undefined ? showArrow : suffixIcon !== null;
+export default function useShowArrow(suffixIcon?: ReactNode, showArrow?: boolean) {
+  return React.useMemo<boolean>(
+    () => (showArrow !== undefined ? showArrow : suffixIcon !== null),
+    [suffixIcon, showArrow],
+  );
 }
