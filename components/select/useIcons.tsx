@@ -11,7 +11,7 @@ import { devUseWarning } from '../_util/warning';
 
 type RenderNode = React.ReactNode | ((props: any) => React.ReactNode);
 
-const useIcons = ({
+export default function useIcons({
   suffixIcon,
   clearIcon,
   menuItemSelectedIcon,
@@ -37,7 +37,7 @@ const useIcons = ({
   showSuffixIcon?: boolean;
   showArrow?: boolean;
   componentName: string;
-}) => {
+}) {
   if (process.env.NODE_ENV !== 'production') {
     const warning = devUseWarning(componentName);
 
@@ -102,6 +102,4 @@ const useIcons = ({
     }),
     [mergedClearIcon, mergedItemIcon, mergedRemoveIcon, mergedSuffixIcon],
   );
-};
-
-export default useIcons;
+}
